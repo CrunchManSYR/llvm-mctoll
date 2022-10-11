@@ -226,7 +226,8 @@ FunctionType *X86MachineInstructionRaiser::getRaisedFunctionPrototype() {
       auto OpType = TermInst.getOperand(0).getType();
       assert(
           ((OpType == MachineOperand::MachineOperandType::MO_Immediate) ||
-           (OpType == MachineOperand::MachineOperandType::MO_JumpTableIndex)) &&
+           (OpType == MachineOperand::MachineOperandType::MO_JumpTableIndex) ||
+           (OpType == MachineOperand::MachineOperandType::MO_Register)) &&
           "Unexpected block terminator found");
     }
 
